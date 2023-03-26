@@ -103,7 +103,7 @@ class SegModel(nn.Module):
     def __init__(self) -> None:
         super().__init__()
         self.backbone = ResNet18()
-        self.head = FPNHead(in_channels=[64, 128, 256, 512],num_classes=10)
+        self.head = FPNHead(in_channels=[64, 128, 256, 512],num_classes=9)
     def forward(self, x):
         feature = self.backbone(x)
         out = self.head(feature)
@@ -115,7 +115,7 @@ class SegModel2(nn.Module):
     def __init__(self) -> None:
         super().__init__()
         self.backbone = ResNet18()
-        self.head = FPNHead(in_channels=[64, 128, 256, 512],num_classes=10)
+        self.head = FPNHead(in_channels=[64, 128, 256, 512],num_classes=9)
     def forward(self, x):
         feature = self.backbone(x)
         out = self.head(feature)
